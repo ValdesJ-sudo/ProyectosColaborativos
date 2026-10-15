@@ -205,6 +205,29 @@ textarea { min-height: 96px; resize: vertical; }
 input::placeholder, textarea::placeholder { color: #929a93; }
 input:focus, select:focus, textarea:focus { outline: 3px solid #b9d9c6; border-color: var(--green); }
 
+input[type="file"] {
+	min-height: 45px;
+	padding: 6px;
+	font-size: 13px;
+}
+
+input[type="file"]::file-selector-button {
+	margin-right: 10px;
+	padding: 7px 10px;
+	border: 1px solid #b8c8bb;
+	border-radius: 2px;
+	background: var(--mint);
+	color: var(--green-dark);
+	font: inherit;
+	cursor: pointer;
+}
+
+.field-hint {
+	margin: -5px 0 0;
+	color: var(--muted);
+	font-size: 12px;
+}
+
 .radio-list {
 	display: flex;
 	flex-wrap: wrap;
