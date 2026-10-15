@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#f5f4ee">
+	<title>Ficha de emprendimiento | Aula SERCOTEC</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<div class="topline" aria-hidden="true"></div>
+	<header class="masthead">
+		<div class="brand"><span class="brand-mark" aria-hidden="true">S</span><span>Aula de emprendimiento</span></div>
+		<div class="masthead-note">Material de trabajo · Chile</div>
+	</header>
+
+	<main>
+		<section class="intro" aria-labelledby="page-title">
+			<p class="eyebrow">Actividad de clase</p>
+			<h1 id="page-title">Tu negocio, listo para crecer.</h1>
+			<p class="intro-copy">Completa esta ficha para conocer tu emprendimiento y explorar qué apoyos de SERCOTEC podrían ser relevantes para su desarrollo.</p>
+			<div class="class-note">
+				<span class="note-icon" aria-hidden="true">i</span>
+				<div><strong>Ejercicio educativo</strong>Esta ficha es una simulación para la clase. No es una postulación oficial ni envía tus datos a SERCOTEC.</div>
+			</div>
+		</section>
+
+		<section class="form-panel" aria-labelledby="form-title">
+			<div class="form-heading">
+				<h2 id="form-title">Ficha de emprendimiento</h2>
+				<p>Los campos con <span class="required">*</span> son obligatorios.</p>
+			</div>
+
+			<form id="business-form">
+				<fieldset>
+					<legend>01 / Sobre ti</legend>
+					<div class="fields">
+						<div class="field">
+							<label for="full-name">Nombre y apellido <span class="required">*</span></label>
+							<input id="full-name" name="fullName" autocomplete="name" placeholder="Ej. Camila Pérez" required>
+						</div>
+						<div class="field">
+							<label for="email">Correo electrónico <span class="required">*</span></label>
+							<input id="email" name="email" type="email" autocomplete="email" placeholder="nombre@correo.cl" required>
+						</div>
+						<div class="field">
+							<label for="region">Región <span class="required">*</span></label>
+							<select id="region" name="region" required>
+								<option value="" selected disabled>Selecciona tu región</option>
+								<option>Arica y Parinacota</option><option>Tarapacá</option><option>Antofagasta</option>
+								<option>Atacama</option><option>Coquimbo</option><option>Valparaíso</option>
+								<option>Metropolitana de Santiago</option><option>Libertador General Bernardo O'Higgins</option>
+								<option>Maule</option><option>Ñuble</option><option>Biobío</option><option>La Araucanía</option>
+								<option>Los Ríos</option><option>Los Lagos</option><option>Aysén del General Carlos Ibáñez del Campo</option>
+								<option>Magallanes y de la Antártica Chilena</option>
+							</select>
+						</div>
+						<div class="field">
+							<label for="commune">Comuna</label>
+							<input id="commune" name="commune" autocomplete="address-level2" placeholder="Ej. La Serena">
+						</div>
+					</div>
+				</fieldset>
+
+				<fieldset>
+					<legend>02 / Sobre tu negocio</legend>
+					<div class="fields">
+						<div class="field">
+							<label for="business-name">Nombre del emprendimiento <span class="required">*</span></label>
+							<input id="business-name" name="businessName" placeholder="¿Cómo se llama?" required>
+						</div>
+						<div class="field">
+							<label for="sector">Actividad o rubro <span class="required">*</span></label>
+							<select id="sector" name="sector" required>
+								<option value="" selected disabled>Selecciona un rubro</option>
+								<option>Comercio</option><option>Turismo</option><option>Alimentos y gastronomía</option>
+								<option>Artesanía y manufactura</option><option>Servicios</option><option>Agricultura y pesca</option>
+								<option>Industrias creativas</option><option>Otro</option>
+							</select>
+						</div>
+						<div class="field full">
+							<span class="group-label" id="stage-label">¿En qué etapa está tu negocio? <span class="required">*</span></span>
+							<div class="radio-list" role="radiogroup" aria-labelledby="stage-label">
+								<label class="radio-option"><input type="radio" name="stage" value="idea" required> Tengo una idea</label>
+								<label class="radio-option"><input type="radio" name="stage" value="starting"> Estoy comenzando</label>
+								<label class="radio-option"><input type="radio" name="stage" value="operating"> Ya está funcionando</label>
+							</div>
+						</div>
+						<div class="field full">
+							<label for="description">Describe brevemente qué ofreces <span class="required">*</span></label>
+							<textarea id="description" name="description" placeholder="¿Qué producto o servicio ofreces y a quiénes?" required></textarea>
+						</div>
+					</div>
+				</fieldset>
+
+				<fieldset>
+					<legend>03 / Tu próximo paso</legend>
+					<div class="fields">
+						<div class="field full">
+							<label for="support">¿Qué apoyo te ayudaría a avanzar?</label>
+							<select id="support" name="support">
+								<option value="" selected>Selecciona una opción</option>
+								<option>Capacitación y asesoría</option><option>Financiamiento para iniciar</option>
+								<option>Mejorar o hacer crecer el negocio</option><option>Digitalización y ventas</option>
+								<option>Formalización del negocio</option><option>Conocer mis opciones</option>
+							</select>
+						</div>
+						<div class="field full">
+							<label for="goal">¿Cuál es tu principal meta para este año?</label>
+							<textarea id="goal" name="goal" placeholder="Por ejemplo: llegar a nuevos clientes o formalizar mi negocio"></textarea>
+						</div>
+					</div>
+				</fieldset>
+
+				<label class="consent"><input type="checkbox" name="classConsent" required><span>Confirmo que entiendo que esta es una actividad académica y que mis respuestas no se enviarán a SERCOTEC. <span class="required">*</span></span></label>
+				<div class="form-actions">
+					<small>Actividad para uso en clase. No constituye una postulación oficial.</small>
+					<button type="submit">Enviar ficha <span aria-hidden="true">→</span></button>
+				</div>
+				<div class="success" id="success-message" role="status" aria-live="polite">¡Ficha completada! Ya puedes conversar en clase sobre qué tipo de apoyo podría servirle a tu emprendimiento.</div>
+			</form>
+		</section>
+	</main>
+
+	<footer>Recurso educativo independiente · Información institucional disponible en sercotec.cl</footer>
+
+	<script src="app.js" defer></script>
+</body>
+</html>
