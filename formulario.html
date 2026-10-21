@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="robots" content="noindex, nofollow">
+	<meta name="theme-color" content="#123b5d">
+	<title>Simulación | Postulación educativa</title>
+	<link rel="stylesheet" href="css/styles.css">
+	<script src="js/auth.js" defer></script>
+	<script src="js/form.js" defer></script>
+</head>
+<body data-page="application">
+	<div class="simulation-banner" role="note">SIMULACIÓN CON FINES EDUCATIVOS. Este no es el sitio oficial de Sercotec. No ingreses datos reales.</div>
+	<header class="site-header">
+		<a class="brand" href="formulario.html" aria-label="Aula de emprendimiento, postulación">
+			<span class="brand-mark" aria-hidden="true">A</span>
+			<span><strong>Aula de emprendimiento</strong><small>Ejercicio de postulación · Chile</small></span>
+		</a>
+		<button class="button button-quiet logout-button" type="button">Cerrar sesión</button>
+	</header>
+
+	<main class="page-main">
+		<div class="page-intro">
+			<p class="eyebrow">Digitaliza tu Pyme · Simulación</p>
+			<h1>Formulario de postulación</h1>
+			<p>Completa los cinco pasos con información inventada. Los campos con <span class="required">*</span> son obligatorios.</p>
+		</div>
+
+		<section class="card application-card" aria-label="Formulario multipaso">
+			<div class="progress-block">
+				<div class="progress-copy">
+					<span id="step-title">Paso 1 de 5: Persona postulante</span>
+					<span id="progress-percent">20 %</span>
+				</div>
+				<div id="progress-track" class="progress-track" role="progressbar" aria-label="Progreso del formulario" aria-valuemin="1" aria-valuemax="5" aria-valuenow="1" aria-valuetext="Paso 1 de 5: Persona postulante">
+					<span id="progress-fill"></span>
+				</div>
+				<ol class="step-indicators" aria-label="Pasos de la postulación">
+					<li class="current" aria-current="step"><span>1</span><span class="step-name">Postulante</span></li>
+					<li><span>2</span><span class="step-name">Negocio</span></li>
+					<li><span>3</span><span class="step-name">Proyecto</span></li>
+					<li><span>4</span><span class="step-name">Inversión</span></li>
+					<li><span>5</span><span class="step-name">Revisión</span></li>
+				</ol>
+			</div>
+
+			<form id="application-form" novalidate>
+				<section class="form-step" data-step="0" aria-labelledby="step-1-heading">
+					<div class="step-heading">
+						<p class="eyebrow">Paso 1 de 5</p>
+						<h2 id="step-1-heading" tabindex="-1">Datos de la persona postulante</h2>
+						<p>Ingresa datos inventados para esta actividad.</p>
+					</div>
+					<div class="fields-grid">
+						<div class="field">
+							<label for="applicant-name">Nombre completo <span class="required">*</span></label>
+							<input id="applicant-name" name="applicantName" autocomplete="name" required>
+						</div>
+						<div class="field">
+							<label for="applicant-rut">RUT <span class="required">*</span></label>
+							<input id="applicant-rut" name="applicantRut" autocomplete="off" placeholder="12.345.678-5" inputmode="text" aria-describedby="rut-help" required>
+							<small id="rut-help" class="field-hint">Formato chileno; se valida el dígito verificador.</small>
+						</div>
+						<div class="field">
+							<label for="applicant-email">Correo electrónico <span class="required">*</span></label>
+							<input id="applicant-email" name="applicantEmail" type="email" autocomplete="email" placeholder="nombre@ejemplo.cl" required>
+						</div>
+						<div class="field">
+							<label for="applicant-phone">Teléfono <span class="required">*</span></label>
+							<input id="applicant-phone" name="applicantPhone" type="tel" autocomplete="tel" placeholder="+56 9 1234 5678" required>
+						</div>
+						<div class="field">
+							<label for="region">Región <span class="required">*</span></label>
+							<select id="region" name="region" required>
+								<option value="">Selecciona una región</option>
+								<option>Arica y Parinacota</option>
+								<option>Tarapacá</option>
+								<option>Antofagasta</option>
+								<option>Atacama</option>
+								<option>Coquimbo</option>
+								<option>Valparaíso</option>
+								<option>Metropolitana de Santiago</option>
+								<option>Libertador General Bernardo O'Higgins</option>
+								<option>Maule</option>
+								<option>Ñuble</option>
+								<option>Biobío</option>
+								<option>La Araucanía</option>
+								<option>Los Ríos</option>
+								<option>Los Lagos</option>
+								<option>Aysén del General Carlos Ibáñez del Campo</option>
+								<option>Magallanes y de la Antártica Chilena</option>
+							</select>
+						</div>
+						<div class="field">
+							<label for="commune">Comuna <span class="required">*</span></label>
+							<select id="commune" name="commune" required disabled>
+								<option value="">Primero selecciona una región</option>
+							</select>
+						</div>
+					</div>
+				</section>
+
+				<section class="form-step" data-step="1" aria-labelledby="step-2-heading" hidden>
+					<div class="step-heading">
+						<p class="eyebrow">Paso 2 de 5</p>
+						<h2 id="step-2-heading" tabindex="-1">Datos de la empresa o negocio</h2>
+						<p>Para el ejercicio, puedes imaginar un negocio que te gustaría desarrollar.</p>
+					</div>
+					<div class="fields-grid">
+						<div class="field">
+							<label for="business-name">Razón social o nombre de fantasía <span class="required">*</span></label>
+							<input id="business-name" name="businessName" required>
+						</div>
+						<div class="field">
+							<label for="business-rut">RUT de la empresa <span class="required">*</span></label>
+							<input id="business-rut" name="businessRut" placeholder="76.123.456-7" inputmode="text" required>
+						</div>
+						<div class="field">
+							<label for="business-sector">Giro o rubro <span class="required">*</span></label>
+							<select id="business-sector" name="businessSector" required>
+								<option value="">Selecciona un rubro</option>
+								<option>Comercio</option>
+								<option>Turismo</option>
+								<option>Alimentos y gastronomía</option>
+								<option>Artesanía y manufactura</option>
+								<option>Servicios</option>
+								<option>Agricultura y pesca</option>
+								<option>Industrias creativas</option>
+								<option>Otro</option>
+							</select>
+						</div>
+						<div class="field">
+							<label for="start-date">Fecha de inicio de actividades <span class="required">*</span></label>
+							<input id="start-date" name="startDate" type="date" required>
+						</div>
+						<div class="field">
+							<label for="business-size">Tamaño de empresa <span class="required">*</span></label>
+							<select id="business-size" name="businessSize" required>
+								<option value="">Selecciona un tamaño</option>
+								<option>Microempresa</option>
+								<option>Pequeña empresa</option>
+							</select>
+						</div>
+						<div class="field">
+							<label for="annual-sales">Ventas anuales aproximadas (CLP) <span class="required">*</span></label>
+							<input id="annual-sales" name="annualSales" type="number" min="0" step="1" inputmode="numeric" placeholder="Ej. 5000000" required>
+						</div>
+					</div>
+				</section>
+
+				<section class="form-step" data-step="2" aria-labelledby="step-3-heading" hidden>
+					<div class="step-heading">
+						<p class="eyebrow">Paso 3 de 5</p>
+						<h2 id="step-3-heading" tabindex="-1">Describe tu proyecto</h2>
+						<p>Explica qué quieres lograr y de qué manera el apoyo contribuiría.</p>
+					</div>
+					<div class="fields-grid">
+						<div class="field field-full">
+							<label for="project-name">Nombre del proyecto <span class="required">*</span></label>
+							<input id="project-name" name="projectName" required>
+						</div>
+						<div class="field field-full">
+							<label for="project-description">Descripción del proyecto <span class="required">*</span></label>
+							<textarea id="project-description" name="projectDescription" rows="5" maxlength="600" aria-describedby="description-count" required></textarea>
+							<small id="description-count" class="field-hint" aria-live="polite">0 de 600 caracteres</small>
+						</div>
+						<div class="field field-full">
+							<label for="project-goal">Objetivo <span class="required">*</span></label>
+							<textarea id="project-goal" name="projectGoal" rows="3" required></textarea>
+						</div>
+						<div class="field">
+							<label for="requested-amount">Monto solicitado (CLP) <span class="required">*</span></label>
+							<input id="requested-amount" name="requestedAmount" type="number" min="1" step="1" inputmode="numeric" required>
+						</div>
+						<div class="field">
+							<label for="own-contribution">Monto de aporte propio (CLP) <span class="required">*</span></label>
+							<input id="own-contribution" name="ownContribution" type="number" min="0" step="1" inputmode="numeric" required>
+						</div>
+					</div>
+				</section>
+
+				<section class="form-step" data-step="3" aria-labelledby="step-4-heading" hidden>
+					<div class="step-heading">
+						<p class="eyebrow">Paso 4 de 5</p>
+						<h2 id="step-4-heading" tabindex="-1">Plan de inversión</h2>
+						<p>Agrega los ítems que compondrían el proyecto. El total se actualiza automáticamente.</p>
+					</div>
+					<div class="table-scroll">
+						<table class="investment-table">
+							<caption>Detalle de los gastos simulados</caption>
+							<thead>
+								<tr><th scope="col">Ítem</th><th scope="col">Descripción</th><th scope="col">Monto (CLP)</th><th scope="col">Categoría</th><th scope="col"><span class="sr-only">Acciones</span></th></tr>
+							</thead>
+							<tbody id="investment-rows"></tbody>
+						</table>
+					</div>
+					<button id="add-investment" class="button button-secondary add-row-button" type="button">+ Agregar ítem</button>
+					<div class="total-card">
+						<span>Total plan de inversión</span>
+						<strong id="investment-total" aria-live="polite">$0</strong>
+					</div>
+					<p id="investment-error" class="error-message" role="alert" hidden></p>
+				</section>
+
+				<section class="form-step" data-step="4" aria-labelledby="step-5-heading" hidden>
+					<div class="step-heading">
+						<p class="eyebrow">Paso 5 de 5</p>
+						<h2 id="step-5-heading" tabindex="-1">Declaraciones y revisión</h2>
+						<p>Revisa la información antes de enviar esta simulación.</p>
+					</div>
+					<div class="declarations">
+						<label class="check-option">
+							<input type="checkbox" name="declarationTruth" required>
+							<span>Declaro que la información ingresada es ficticia y se utilizará solo para fines educativos. <span class="required">*</span></span>
+						</label>
+						<label class="check-option">
+							<input type="checkbox" name="declarationTerms" required>
+							<span>Entiendo que esta actividad no corresponde a una postulación oficial y que mis datos no se envían a ningún servidor. <span class="required">*</span></span>
+						</label>
+					</div>
+					<div class="field field-full file-field">
+						<label for="supporting-files">Archivos de apoyo (opcional)</label>
+						<input id="supporting-files" name="supportingFiles" type="file" multiple accept=".pdf,.png,.jpg,.jpeg,.doc,.docx">
+						<small class="field-hint">La selección funciona localmente. Los archivos no se suben ni se guardan; se mostrarán solo sus nombres.</small>
+					</div>
+					<section class="review-panel" aria-labelledby="review-heading">
+						<h3 id="review-heading">Resumen de lo ingresado</h3>
+						<div id="application-summary" class="summary-content"></div>
+					</section>
+					<p id="submit-error" class="error-message" role="alert" hidden></p>
+				</section>
+
+				<div class="form-navigation">
+					<button id="previous-step" class="button button-secondary" type="button" disabled>← Anterior</button>
+					<button id="next-step" class="button button-primary" type="button">Siguiente →</button>
+					<button id="submit-application" class="button button-primary" type="submit" hidden>Enviar simulación</button>
+				</div>
+			</form>
+		</section>
+	</main>
+	<footer class="site-footer">Actividad educativa independiente · No constituye una postulación oficial.</footer>
+</body>
+</html>
