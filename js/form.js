@@ -45,6 +45,7 @@
 		const summary = document.querySelector("#application-summary");
 		const region = document.querySelector("#region");
 		const commune = document.querySelector("#commune");
+		const startDate = document.querySelector("#start-date");
 		const description = document.querySelector("#project-description");
 		const stepNames = ["Persona postulante", "Empresa o negocio", "Proyecto", "Plan de inversión", "Declaraciones y revisión"];
 		let currentStep = 0;
@@ -84,6 +85,13 @@
 			commune.disabled = options.length === 0;
 		}
 		region.addEventListener("change", updateCommunes);
+
+		form.querySelectorAll('input[name="has-started-activities"]').forEach((input) => {
+			input.addEventListener("change", () => {
+				startDate.disabled = input.value !== "yes";
+				if (startDate.disabled) startDate.value = "";
+			});
+		});
 
 		function updateDescriptionCount() {
 			document.querySelector("#description-count").textContent = `${description.value.length} caracteres`;
@@ -131,6 +139,7 @@
 					name: value("business-name"),
 					rut: value("business-rut"),
 					sector: value("business-sector"),
+					hasStartedActivities: form.elements["has-started-activities"].value,
 					startDate: value("start-date"),
 					size: value("business-size"),
 					annualSales: value("annual-sales")
@@ -166,7 +175,9 @@
 			]);
 			appendSummaryGroup(container, "Empresa o negocio", [
 				["Nombre", data.business.name], ["RUT", data.business.rut],
-				["Rubro", data.business.sector], ["Inicio de actividades", data.business.startDate],
+				["Rubro", data.business.sector],
+				["¿Tiene iniciación de actividades?", data.business.hasStartedActivities === "yes" ? "Sí" : data.business.hasStartedActivities === "no" ? "No" : "Sin respuesta"],
+				["Fecha de inicio de actividades", data.business.startDate],
 				["Tamaño", data.business.size], ["Ventas anuales aproximadas", formatCurrency(data.business.annualSales)]
 			]);
 			appendSummaryGroup(container, "Proyecto", [
@@ -284,7 +295,9 @@
 		]);
 		appendSummaryGroup(container, "Empresa o negocio", [
 			["Nombre", data.business.name], ["RUT", data.business.rut],
-			["Rubro", data.business.sector], ["Inicio de actividades", data.business.startDate],
+			["Rubro", data.business.sector],
+			["¿Tiene iniciación de actividades?", data.business.hasStartedActivities === "yes" ? "Sí" : data.business.hasStartedActivities === "no" ? "No" : "Sin respuesta"],
+			["Fecha de inicio de actividades", data.business.startDate],
 			["Tamaño", data.business.size], ["Ventas anuales aproximadas", formatCurrency(data.business.annualSales)]
 		]);
 		appendSummaryGroup(container, "Proyecto", [
