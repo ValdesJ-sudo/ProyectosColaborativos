@@ -146,6 +146,7 @@ h1, h2, h3, h4, p { margin-top: 0; }
 
 .field { min-width: 0; margin-bottom: 19px; }
 .field label, .field > label { display: block; margin-bottom: 6px; font-size: 14px; font-weight: 700; }
+.field-label { display: block; margin-bottom: 6px; font-size: 14px; font-weight: 700; }
 input, select, textarea {
 	width: 100%;
 	min-height: 46px;
@@ -165,6 +166,9 @@ input:focus-visible, select:focus-visible, textarea:focus-visible, button:focus-
 	outline-offset: 2px;
 }
 input[type="checkbox"] { width: 19px; min-width: 19px; min-height: 19px; height: 19px; accent-color: var(--navy); }
+input[type="radio"] { width: 18px; min-width: 18px; min-height: 18px; height: 18px; margin: 0; padding: 0; accent-color: var(--navy); }
+.radio-options { min-height: 46px; display: flex; align-items: center; gap: 20px; }
+.field .radio-option { display: inline-flex; align-items: center; gap: 8px; margin: 0; font-size: 14px; font-weight: 500; cursor: pointer; }
 input[type="file"] { padding: 7px; font-size: 13px; }
 input[type="file"]::file-selector-button {
 	min-height: 30px;
