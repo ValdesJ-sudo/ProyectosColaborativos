@@ -24,7 +24,7 @@
 		<div class="page-intro">
 			<p class="eyebrow">Digitaliza tu Pyme · Simulación</p>
 			<h1>Formulario de postulación</h1>
-			<p>Completa los cinco pasos con información inventada. Los campos con <span class="required">*</span> son obligatorios.</p>
+			<p>Completa los cinco pasos con información inventada. Puedes dejar los campos en blanco.</p>
 		</div>
 
 		<section class="card application-card" aria-label="Formulario multipaso">
@@ -54,25 +54,25 @@
 					</div>
 					<div class="fields-grid">
 						<div class="field">
-							<label for="applicant-name">Nombre completo <span class="required">*</span></label>
-							<input id="applicant-name" name="applicantName" autocomplete="name" required>
+							<label for="applicant-name">Nombre completo</label>
+							<input id="applicant-name" name="applicantName" autocomplete="name">
 						</div>
 						<div class="field">
-							<label for="applicant-rut">RUT <span class="required">*</span></label>
-							<input id="applicant-rut" name="applicantRut" autocomplete="off" placeholder="12.345.678-5" inputmode="text" aria-describedby="rut-help" required>
-							<small id="rut-help" class="field-hint">Formato chileno; se valida el dígito verificador.</small>
+							<label for="applicant-rut">RUT</label>
+							<input id="applicant-rut" name="applicantRut" autocomplete="off" placeholder="12.345.678-5" inputmode="text" aria-describedby="rut-help">
+							<small id="rut-help" class="field-hint">Ejemplo: 12.345.678-5.</small>
 						</div>
 						<div class="field">
-							<label for="applicant-email">Correo electrónico <span class="required">*</span></label>
-							<input id="applicant-email" name="applicantEmail" type="email" autocomplete="email" placeholder="nombre@ejemplo.cl" required>
+							<label for="applicant-email">Correo electrónico</label>
+							<input id="applicant-email" name="applicantEmail" type="email" autocomplete="email" placeholder="nombre@ejemplo.cl">
 						</div>
 						<div class="field">
-							<label for="applicant-phone">Teléfono <span class="required">*</span></label>
-							<input id="applicant-phone" name="applicantPhone" type="tel" autocomplete="tel" placeholder="+56 9 1234 5678" required>
+							<label for="applicant-phone">Teléfono</label>
+							<input id="applicant-phone" name="applicantPhone" type="tel" autocomplete="tel" placeholder="+56 9 1234 5678">
 						</div>
 						<div class="field">
-							<label for="region">Región <span class="required">*</span></label>
-							<select id="region" name="region" required>
+							<label for="region">Región</label>
+							<select id="region" name="region">
 								<option value="">Selecciona una región</option>
 								<option>Arica y Parinacota</option>
 								<option>Tarapacá</option>
@@ -93,8 +93,8 @@
 							</select>
 						</div>
 						<div class="field">
-							<label for="commune">Comuna <span class="required">*</span></label>
-							<select id="commune" name="commune" required disabled>
+							<label for="commune">Comuna</label>
+							<select id="commune" name="commune" disabled>
 								<option value="">Primero selecciona una región</option>
 							</select>
 						</div>
@@ -109,16 +109,16 @@
 					</div>
 					<div class="fields-grid">
 						<div class="field">
-							<label for="business-name">Razón social o nombre de fantasía <span class="required">*</span></label>
-							<input id="business-name" name="businessName" required>
+							<label for="business-name">Razón social o nombre de fantasía</label>
+							<input id="business-name" name="businessName">
 						</div>
 						<div class="field">
-							<label for="business-rut">RUT de la empresa <span class="required">*</span></label>
-							<input id="business-rut" name="businessRut" placeholder="76.123.456-7" inputmode="text" required>
+							<label for="business-rut">RUT de la empresa</label>
+							<input id="business-rut" name="businessRut" placeholder="76.123.456-7" inputmode="text">
 						</div>
 						<div class="field">
-							<label for="business-sector">Giro o rubro <span class="required">*</span></label>
-							<select id="business-sector" name="businessSector" required>
+							<label for="business-sector">Giro o rubro</label>
+							<select id="business-sector" name="businessSector">
 								<option value="">Selecciona un rubro</option>
 								<option>Comercio</option>
 								<option>Turismo</option>
@@ -131,20 +131,20 @@
 							</select>
 						</div>
 						<div class="field">
-							<label for="start-date">Fecha de inicio de actividades <span class="required">*</span></label>
-							<input id="start-date" name="startDate" type="date" required>
+							<label for="start-date">Fecha de inicio de actividades</label>
+							<input id="start-date" name="startDate" type="date">
 						</div>
 						<div class="field">
-							<label for="business-size">Tamaño de empresa <span class="required">*</span></label>
-							<select id="business-size" name="businessSize" required>
+							<label for="business-size">Tamaño de empresa</label>
+							<select id="business-size" name="businessSize">
 								<option value="">Selecciona un tamaño</option>
 								<option>Microempresa</option>
 								<option>Pequeña empresa</option>
 							</select>
 						</div>
 						<div class="field">
-							<label for="annual-sales">Ventas anuales aproximadas (CLP) <span class="required">*</span></label>
-							<input id="annual-sales" name="annualSales" type="number" min="0" step="1" inputmode="numeric" placeholder="Ej. 5000000" required>
+							<label for="annual-sales">Ventas anuales aproximadas (CLP)</label>
+							<input id="annual-sales" name="annualSales" type="number" inputmode="numeric" placeholder="Ej. 5000000">
 						</div>
 					</div>
 				</section>
@@ -157,25 +157,25 @@
 					</div>
 					<div class="fields-grid">
 						<div class="field field-full">
-							<label for="project-name">Nombre del proyecto <span class="required">*</span></label>
-							<input id="project-name" name="projectName" required>
+							<label for="project-name">Nombre del proyecto</label>
+							<input id="project-name" name="projectName">
 						</div>
 						<div class="field field-full">
-							<label for="project-description">Descripción del proyecto <span class="required">*</span></label>
-							<textarea id="project-description" name="projectDescription" rows="5" maxlength="600" aria-describedby="description-count" required></textarea>
-							<small id="description-count" class="field-hint" aria-live="polite">0 de 600 caracteres</small>
+							<label for="project-description">Descripción del proyecto</label>
+							<textarea id="project-description" name="projectDescription" rows="5" aria-describedby="description-count"></textarea>
+							<small id="description-count" class="field-hint" aria-live="polite">0 caracteres</small>
 						</div>
 						<div class="field field-full">
-							<label for="project-goal">Objetivo <span class="required">*</span></label>
-							<textarea id="project-goal" name="projectGoal" rows="3" required></textarea>
+							<label for="project-goal">Objetivo</label>
+							<textarea id="project-goal" name="projectGoal" rows="3"></textarea>
 						</div>
 						<div class="field">
-							<label for="requested-amount">Monto solicitado (CLP) <span class="required">*</span></label>
-							<input id="requested-amount" name="requestedAmount" type="number" min="1" step="1" inputmode="numeric" required>
+							<label for="requested-amount">Monto solicitado (CLP)</label>
+							<input id="requested-amount" name="requestedAmount" type="number" inputmode="numeric">
 						</div>
 						<div class="field">
-							<label for="own-contribution">Monto de aporte propio (CLP) <span class="required">*</span></label>
-							<input id="own-contribution" name="ownContribution" type="number" min="0" step="1" inputmode="numeric" required>
+							<label for="own-contribution">Monto de aporte propio (CLP)</label>
+							<input id="own-contribution" name="ownContribution" type="number" inputmode="numeric">
 						</div>
 					</div>
 				</section>
@@ -200,7 +200,6 @@
 						<span>Total plan de inversión</span>
 						<strong id="investment-total" aria-live="polite">$0</strong>
 					</div>
-					<p id="investment-error" class="error-message" role="alert" hidden></p>
 				</section>
 
 				<section class="form-step" data-step="4" aria-labelledby="step-5-heading" hidden>
@@ -211,17 +210,17 @@
 					</div>
 					<div class="declarations">
 						<label class="check-option">
-							<input type="checkbox" name="declarationTruth" required>
-							<span>Declaro que la información ingresada es ficticia y se utilizará solo para fines educativos. <span class="required">*</span></span>
+							<input type="checkbox" name="declarationTruth">
+							<span>Declaro que la información ingresada es ficticia y se utilizará solo para fines educativos.</span>
 						</label>
 						<label class="check-option">
-							<input type="checkbox" name="declarationTerms" required>
-							<span>Entiendo que esta actividad no corresponde a una postulación oficial y que mis datos no se envían a ningún servidor. <span class="required">*</span></span>
+							<input type="checkbox" name="declarationTerms">
+							<span>Entiendo que esta actividad no corresponde a una postulación oficial y que mis datos no se envían a ningún servidor.</span>
 						</label>
 					</div>
 					<div class="field field-full file-field">
 						<label for="supporting-files">Archivos de apoyo (opcional)</label>
-						<input id="supporting-files" name="supportingFiles" type="file" multiple accept=".pdf,.png,.jpg,.jpeg,.doc,.docx">
+						<input id="supporting-files" name="supportingFiles" type="file" multiple>
 						<small class="field-hint">La selección funciona localmente. Los archivos no se suben ni se guardan; se mostrarán solo sus nombres.</small>
 					</div>
 					<section class="review-panel" aria-labelledby="review-heading">

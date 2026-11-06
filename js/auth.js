@@ -38,12 +38,6 @@
 		const password = document.querySelector("#password").value;
 		error.hidden = true;
 
-		if (!username || !password) {
-			error.textContent = "Ingresa tu usuario y contraseña para continuar.";
-			error.hidden = false;
-			return;
-		}
-
 		if (!window.crypto || !window.crypto.subtle) {
 			error.textContent = "Este navegador no permite verificar el acceso de forma segura. Abre la página en un navegador actualizado.";
 			error.hidden = false;

@@ -179,7 +179,6 @@ input[type="file"]::file-selector-button {
 }
 .field-hint, .privacy-note { display: block; margin-top: 5px; color: var(--muted); font-size: 12px; }
 .privacy-note { margin: 18px 0 0; }
-.required { color: #a42d32; font-weight: 800; }
 
 .button {
 	min-height: 44px;

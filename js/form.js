@@ -27,21 +27,6 @@
 		container.append(group);
 	}
 
-	function isValidRut(value) {
-		const rut = value.replace(/[.\s]/g, "").toUpperCase();
-		if (!/^\d{7,8}-[\dK]$/.test(rut)) return false;
-		const [body, verifier] = rut.split("-");
-		let sum = 0;
-		let multiplier = 2;
-		for (let index = body.length - 1; index >= 0; index -= 1) {
-			sum += Number(body[index]) * multiplier;
-			multiplier = multiplier === 7 ? 2 : multiplier + 1;
-		}
-		const remainder = 11 - (sum % 11);
-		const expected = remainder === 11 ? "0" : remainder === 10 ? "K" : String(remainder);
-		return verifier === expected;
-	}
-
 	function initializeApplication() {
 		const form = document.querySelector("#application-form");
 		if (!form) return;
@@ -101,7 +86,7 @@
 		region.addEventListener("change", updateCommunes);
 
 		function updateDescriptionCount() {
-			document.querySelector("#description-count").textContent = `${description.value.length} de 600 caracteres`;
+			document.querySelector("#description-count").textContent = `${description.value.length} caracteres`;
 		}
 		description.addEventListener("input", updateDescriptionCount);
 
@@ -115,10 +100,10 @@
 		function addInvestmentRow() {
 			const row = document.createElement("tr");
 			row.innerHTML = `
-				<td><label class="sr-only">Nombre del ítem</label><input class="investment-item" aria-label="Nombre del ítem" required maxlength="80"></td>
-				<td><label class="sr-only">Descripción del ítem</label><input class="investment-description" aria-label="Descripción del ítem" required maxlength="180"></td>
-				<td><label class="sr-only">Monto del ítem en pesos</label><input class="investment-amount" aria-label="Monto del ítem en pesos" type="number" min="1" step="1" inputmode="numeric" required></td>
-				<td><label class="sr-only">Categoría del ítem</label><select class="investment-category" aria-label="Categoría del ítem" required><option value="">Selecciona</option><option>Activos</option><option>Capital de trabajo</option><option>Marketing y difusión</option><option>Asesoría</option><option>Otro</option></select></td>
+				<td><label class="sr-only">Nombre del ítem</label><input class="investment-item" aria-label="Nombre del ítem"></td>
+				<td><label class="sr-only">Descripción del ítem</label><input class="investment-description" aria-label="Descripción del ítem"></td>
+				<td><label class="sr-only">Monto del ítem en pesos</label><input class="investment-amount" aria-label="Monto del ítem en pesos" type="number" inputmode="numeric"></td>
+				<td><label class="sr-only">Categoría del ítem</label><select class="investment-category" aria-label="Categoría del ítem"><option value="">Selecciona</option><option>Activos</option><option>Capital de trabajo</option><option>Marketing y difusión</option><option>Asesoría</option><option>Otro</option></select></td>
 				<td><button class="button button-remove remove-investment" type="button" aria-label="Eliminar ítem">Eliminar</button></td>`;
 			row.querySelector(".investment-amount").addEventListener("input", updateTotal);
 			row.querySelector(".remove-investment").addEventListener("click", () => {
@@ -241,46 +226,15 @@
 			window.scrollTo({ top: 0, behavior: "smooth" });
 		}
 
-		function validateCurrentStep() {
-			const activeStep = steps[currentStep];
-			if (currentStep === 3 && rowContainer.querySelectorAll("tr").length === 0) {
-				const error = document.querySelector("#investment-error");
-				error.textContent = "Agrega al menos un ítem al plan de inversión.";
-				error.hidden = false;
-				document.querySelector("#add-investment").focus();
-				return false;
-			}
-			const controls = Array.from(activeStep.querySelectorAll("input, select, textarea"));
-			for (const control of controls) {
-				if (control.id === "applicant-rut" || control.id === "business-rut") {
-					control.setCustomValidity(control.value && !isValidRut(control.value) ? "Ingresa un RUT válido, incluyendo su dígito verificador." : "");
-				}
-				if (!control.checkValidity()) {
-					control.reportValidity();
-					control.focus();
-					return false;
-				}
-			}
-			const investmentError = document.querySelector("#investment-error");
-			if (investmentError) investmentError.hidden = true;
-			return true;
-		}
-
 		previousButton.addEventListener("click", () => showStep(Math.max(0, currentStep - 1)));
 		nextButton.addEventListener("click", () => {
-			if (validateCurrentStep()) showStep(Math.min(steps.length - 1, currentStep + 1));
-		});
-
-		["applicant-rut", "business-rut"].forEach((id) => {
-			const input = document.getElementById(id);
-			input.addEventListener("input", () => input.setCustomValidity(""));
+			showStep(Math.min(steps.length - 1, currentStep + 1));
 		});
 
 		form.addEventListener("submit", (event) => {
 			event.preventDefault();
 			const error = document.querySelector("#submit-error");
 			error.hidden = true;
-			if (!validateCurrentStep()) return;
 
 			const data = collectData();
 			const year = new Date().getFullYear();
